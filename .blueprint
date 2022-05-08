@@ -1,0 +1,19 @@
+created:
+    - database/factories/StoryFactory.php
+    - database/factories/ChapterFactory.php
+    - database/factories/CategoryFactory.php
+    - database/migrations/2022_05_08_084035_create_stories_table.php
+    - database/migrations/2022_05_08_084036_create_chapters_table.php
+    - database/migrations/2022_05_08_084037_create_categories_table.php
+    - database/migrations/2022_05_08_084038_create_category_story_table.php
+    - app/Models/Story.php
+    - app/Models/Chapter.php
+    - app/Models/Category.php
+    - database/seeders/StorySeeder.php
+    - database/seeders/ChapterSeeder.php
+    - database/seeders/CategorySeeder.php
+models:
+    User: { name: string, email: string, email_verified_at: 'datetime nullable', password: string, remember_token: 'string:100 nullable' }
+    Story: { id: 'id foreign:stories', name: string, alias: string, view: 'integer unsigned', status: 'enum:COMPLETE,RUNNING', image: 'string nullable', description: text, time: date, timestamps: timestamps, relationships: { belongsToMany: Category, hasMany: Chapter } }
+    Chapter: { id: id, story_id: foreign, name: string, view: 'integer unsigned', timestamps: timestamps }
+    Category: { id: id, name: string, alias: string, timestamps: timestamps, relationships: { belongsToMany: Story } }

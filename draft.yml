@@ -1,0 +1,32 @@
+models:
+  Story:
+    id: id foreign:stories
+    name: string
+    alias: string
+    view: integer unsigned
+    status: enum:COMPLETE,RUNNING
+    image: string nullable
+    description: text
+    time: date
+    timestamps: true
+    relationships:
+      belongsToMany: Category
+      hasMany: Chapter
+
+  Chapter:
+    id: id
+    story_id: foreign
+    name: string
+    view: integer unsigned
+    timestamps: true
+
+  Category:
+    id: id
+    name: string
+    alias: string
+    timestamps: true
+    relationships:
+      belongsToMany: Story
+  
+
+seeders: Story, Chapter, Category

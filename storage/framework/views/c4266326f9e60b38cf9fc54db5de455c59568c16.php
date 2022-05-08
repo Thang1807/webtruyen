@@ -1,0 +1,5 @@
+<!-- This file is used to store sidebar items, starting with Backpack\Base 0.9.0 -->
+<li class="nav-item"><a class="nav-link" href="<?php echo e(backpack_url('dashboard')); ?>"><i class="la la-home nav-icon"></i> <?php echo e(trans('backpack::base.dashboard')); ?></a></li>
+<li class='nav-item'><a class='nav-link' href='<?php echo e(backpack_url('story')); ?>'><i class='nav-icon la la-question'></i> Stories</a></li>
+<li class='nav-item'><a class='nav-link' href='<?php echo e(backpack_url('category')); ?>'><i class='nav-icon la la-question'></i> Categories</a></li>
+<li class='nav-item'><a class='nav-link' href='<?php echo e(backpack_url('chapter')); ?>'><i class='nav-icon la la-question'></i> Chapters</a></li><?php /**PATH C:\xampp\htdocs\webtruyen\resources\views/vendor/backpack/base/inc/sidebar_content.blade.php ENDPATH**/ ?>
